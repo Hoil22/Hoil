@@ -3,9 +3,10 @@
 int main(){
 
     int number=0;
-    printf("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”:\n");
+    printf("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä:\n");
     scanf("%d", &number);
-    printf("ì…ë ¥í•œ ìˆ«ìëŠ” %dì…ë‹ˆë‹¤.",number);
+    printf("ÀÔ·ÂÇÑ ¼ıÀÚ´Â %dÀÔ´Ï´Ù.",number);
 
     return 0;
+
 }
