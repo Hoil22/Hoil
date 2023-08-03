@@ -32,12 +32,12 @@ int main(){
     
     else if(num==a){
         printf("정답입니다!\n");
-        goto end;
+        return 0;
     }
     
     }
 
-    end:
+    
 
     return 0;
 }
