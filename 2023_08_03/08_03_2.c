@@ -32,7 +32,7 @@ int main(){
     
     else if(num==a){
         printf("정답입니다!\n");
-        return 0;
+        break;
     }
     
     }
