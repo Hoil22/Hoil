@@ -6,14 +6,54 @@ struct book{
     int available;
 };
 
+void list(struct book *B);
+
 int main(){
-    struct book B1={1,'C ì…ë¬¸í¸',1};
-    struct book B2={2, 'íŒŒì´ì¬ ê¸°ë³¸í¸',1};
-    struct book B3={3,'ìë°” ê¸°ë³¸í¸',1};
-    struct book B4={4,'íŒŒì´ì¬ ì¤‘ê¸‰í¸',1};
+    struct book B[4]={
+        {1,"C ÀÔ¹®Æí", 1},
+        {2,"ÆÄÀÌ½ã ±âº»Æí",1},
+        {3,"ÀÚ¹Ù ±âº»Æí",1},
+        {4,"ÆÄÀÌ½ã Áß±ŞÆí",1}
+    };
 
-    printf("ì „ì²´ ë„ì„œ ëª©ë¡ì…ë‹ˆë‹¤.");
-    printf("===============================");
-    
+    int input;
 
+    while(1){
+        list(B);
+        printf("´ëÃâ/¹İ³³ ÇÒ Ã¥ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.(Á¾·á:-1): ");
+        scanf("%d",&input);
+
+        if(input==-1){
+           printf("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.\n");
+           break;}
+        if(input<1||input>4){
+            printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.\n");
+            continue;}
+        if(B[input-1].available==0){
+            printf("%s ¹İ³³ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n", B[input-1].title);
+            B[input-1].available=1;
+        }
+        else{
+            printf("%s ´ëÃâÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n",B[input-1].title);
+            B[input-1].available=1;
+        }
+        
+    }    
+
+}
+void list(struct book*B){
+    char*available="´ëÃâ°¡´É";
+    char*no_available="´ëÃâºÒ°¡´É";
+
+    printf("ÀüÃ¼ µµ¼­ ¸ñ·ÏÀÔ´Ï´Ù.\n");
+    printf("==================================\n");
+    for(int i=0;i<4;i++){
+        printf("%d. %-16s", B[i].id, B[i].title);
+
+        if(B[i].available)
+            printf("[%s]\n", available);
+        else
+            printf("[%s]\n",no_available);
+    }
+    printf("==================================\n");
 }
