@@ -17,7 +17,7 @@ int main(){
         printf("몇번 상품을 구매하시겠습니까?(1~12)");
         scanf("%d", &input);
 
-        if(1<=input<=12)
+        if(1<=input && input<=12)
             printf("구매하신 상품은 %d.%s입니다. \n이용해주셔서 감사합니다.\n\n\n",input, menu[(input/4)][input%4-1]);
         else{
             printf("번호를 잘못 입력했습니다. 프로그램 종료\n");
